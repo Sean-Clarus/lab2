@@ -20,17 +20,23 @@ jobs:
       - run: echo "Exploring Workflow Dispatch Trigger"
   job2:
     runs-on: ubuntu-latest
+    # steps:
+    #   - run: echo "$CUSTOM_MESSAGE"
+    #     name: Printing Custom Message
+    #     env:
+    #       CUSTOM_MESSAGE:  ${{  inputs.custom_message }}
+    #   - name: Printing run-job boolean value
+    #     if: ${{ inputs.run-job == true }}
+    #     run: echo "$INPUT_VALUE"
+    #     env:
+    #       INPUT_VALUE: ${{  inputs.run-job}}
     steps:
-      - run: echo "$CUSTOM_MESSAGE"
+      - run: echo ${{  inputs.custom_message  }}
         name: Printing Custom Message
-        env:
-          CUSTOM_MESSAGE:  ${{  inputs.custom_message }}
       - name: Printing run-job boolean value
-        if: ${{ inputs.run-job == true }}
-        run: echo "$INPUT_VALUE"
-        env:
-          INPUT_VALUE: ${{  inputs.run-job}}
-          
+        if: ${{  inputs.run-job == true  }}
+        run: echo ${{  inputs.run-job  }}
+
 
 
 
