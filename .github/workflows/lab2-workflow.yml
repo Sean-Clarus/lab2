@@ -26,10 +26,12 @@ jobs:
         env:
           CUSTOM_MESSAGE:  ${{  inputs.custom_message }}
       - name: Printing run-job boolean value
+        if: ${{ inputs.run-job == 'true' }}
         run: echo "$INPUT_VALUE"
         env:
           INPUT_VALUE: ${{  inputs.run-job}}
           
+
 
 
 
