@@ -4,7 +4,7 @@ name: Exploring Workflow Dispatch Trigger
 on:
   workflow_dispatch:
     inputs:
-      run_job:
+      run-job:
         description: 'Run Specific Job'
         required: false
         type: boolean
@@ -26,3 +26,4 @@ jobs:
         env:
           CUSTOM_MESSAGE:  ${{  inputs.custom_message }}
           
+
