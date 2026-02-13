@@ -1,6 +1,5 @@
 name: Exploring Workflow Dispatch Trigger
 
-
 on:
   workflow_dispatch:
     inputs:
@@ -36,6 +35,7 @@ jobs:
       - name: Printing run-job boolean value
         if: ${{  inputs.run-job == "true"  }}
         run: echo ${{  inputs.run-job  }}
+
 
 
 
