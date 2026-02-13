@@ -16,6 +16,7 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    needs: job2
     steps:
       - run: echo "Exploring Workflow Dispatch Trigger"
   job2:
@@ -26,4 +27,5 @@ jobs:
         env:
           CUSTOM_MESSAGE:  ${{  inputs.custom_message }}
           
+
 
